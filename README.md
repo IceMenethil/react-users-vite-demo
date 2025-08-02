@@ -6,7 +6,32 @@ A minimal React + Vite project demonstrating user listing and detail pages, usin
 
 ## Project Structure
 
-src/ ├── App.jsx ├── main.jsx ├── api/ │ ├── baseApi.js │ └── UsersApi.js ├── assets/ ├── components/ │ └── UserCard.jsx ├── config/ │ └── endpoints.js ├── features/ │ └── users/ │ ├── UserDetailPage.jsx │ └── UsersPage.jsx ├── layouts/ │ └── MainLayout.jsx ├── pages/ │ ├── AboutPage.jsx │ └── NotFoundPage.jsx ├── routes/ │ └── AppRoutes.jsx ├── stores/ │ └── useUsersStore.js └── styles/ └── index.css
+src/
+├── App.jsx
+├── main.jsx
+├── api/
+│ ├── baseApi.js
+│ └── UsersApi.js
+├── assets/
+├── components/
+│ └── UserCard.jsx
+├── config/
+│ └── endpoints.js
+├── features/
+│ └── users/
+│ ├── UserDetailPage.jsx
+│ └── UsersPage.jsx
+├── layouts/
+│ └── MainLayout.jsx
+├── pages/
+│ ├── AboutPage.jsx
+│ └── NotFoundPage.jsx
+├── routes/
+│ └── AppRoutes.jsx
+├── stores/
+│ └── useUsersStore.js
+└── styles/
+└── index.css
 
 ---
 
