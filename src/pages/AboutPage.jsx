@@ -1,7 +1,12 @@
 import React from "react";
 
 const AboutPage = () => {
-  return <div>AboutPage</div>;
+  return (
+    <section>
+      <h1>About</h1>
+      <p>This is the default page.</p>
+    </section>
+  );
 };
 
 export default AboutPage;
