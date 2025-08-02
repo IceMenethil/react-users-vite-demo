@@ -1,21 +1,31 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import useUsersStore from "../../stores/useUsersStore";
-import { useEffect } from "react";
+import UserCard from "../../components/UserCard";
 
 const UsersPage = () => {
   const { users, fetchUsers } = useUsersStore();
+  const [filter, setFilter] = useState("");
+
   useEffect(() => {
     fetchUsers();
   }, [fetchUsers]);
-  console.log(users);
+
+  const filteredUsers = users.filter((user) =>
+    user.name.toLowerCase().includes(filter.toLowerCase())
+  );
   return (
     <section>
       <h1>Users</h1>
+      <input
+        type="text"
+        placeholder="Filter by name..."
+        value={filter}
+        onChange={(e) => setFilter(e.target.value)}
+        style={{ marginBottom: 16, padding: 8, width: "100%" }}
+      />
       <ul>
-        {[1, 2, 3].map((id) => (
-          <li key={id}>
-            <Link to={`/users/${id}`}>User {id}</Link>
-          </li>
+        {filteredUsers.map((user) => (
+          <UserCard {...user} key={user.id} />
         ))}
       </ul>
     </section>
