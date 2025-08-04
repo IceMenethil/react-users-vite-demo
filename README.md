@@ -4,7 +4,7 @@ A minimal React + Vite project demonstrating user listing and detail pages, usin
 
 ---
 
-## Project Structure
+## 🗂️ Project Structure
 <code>
 src/
 ├── App.jsx
