@@ -5,7 +5,7 @@ A minimal React + Vite project demonstrating user listing and detail pages, usin
 ---
 
 ## Project Structure
-
+<code>
 src/
 ├── App.jsx
 ├── main.jsx
@@ -31,8 +31,18 @@ src/
 ├── stores/
 │ └── useUsersStore.js
 └── styles/
-└── index.css
-
+  ├── base/
+  │ └── _reset.scss
+  ├── mixins/
+  │ ├── _media.scss
+  │ ├── _utils.scss
+  │ └── _typography.scss
+  ├── variables/
+  │ ├── _colors.scss
+  │ ├── _spacing.scss
+  │ └── _breakpoints.scss
+  └── index.scss
+</code>
 ---
 
 ## Key Files & Directories
@@ -51,7 +61,18 @@ src/
 - **src/pages/**: Static pages (About, Not Found).
 - **src/routes/AppRoutes.jsx**: Route definitions.
 - **src/stores/useUsersStore.js**: Zustand store for user state.
-- **src/styles/index.css**: Global styles and CSS reset.
+- **src/styles/index.css**: Global SCSS styles, variables, mixins, and base reset..
+
+---
+
+## 🎨 SCSS Integration
+
+- SCSS was implemented for better style structure and maintainability.
+- Global styles are placed in `src/styles/`, including:
+  - `variables/` for colors, spacing, breakpoints
+  - `mixins/` for media queries, utility helpers
+  - `base/_reset.scss` for CSS reset
+- Component-level styling uses SCSS Modules (`*.module.scss`) for local scope.
 
 ---
 
@@ -79,3 +100,5 @@ Zustand for state management
 Axios for HTTP requests
 React Router v7 for routing
 Minimal global styling
+SCSS for modular styling
+Responsive layout via SCSS mixins
