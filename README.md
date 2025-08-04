@@ -35,11 +35,8 @@ src/
   │ └── _reset.scss
   ├── mixins/
   │ ├── _media.scss
-  │ ├── _utils.scss
-  │ └── _typography.scss
   ├── variables/
   │ ├── _colors.scss
-  │ ├── _spacing.scss
   │ └── _breakpoints.scss
   └── index.scss
 </code>
