@@ -1,0 +1,18 @@
+.users {
+  &__title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  &__filter {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 16px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+}

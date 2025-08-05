@@ -3,7 +3,7 @@
 @mixin media($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
     $width: map-get($breakpoints, $breakpoint);
-    @media (min-width: $width) {
+    @media (max-width: $width) {
       @content;
     }
   } @else {

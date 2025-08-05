@@ -2,6 +2,8 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useUsersStore from "../../stores/useUsersStore";
 
+import styles from "./UserDetailPage.module.scss";
+
 const UserDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -18,32 +20,20 @@ const UserDetailPage = () => {
 
   return (
     <section
-      style={{
-        maxWidth: 400,
-        margin: "40px auto",
-        padding: 24,
-        border: "1px solid #eee",
-        borderRadius: 8,
-      }}
+      className={styles.userDetailPage}
+      
     >
-      <h2>User Details</h2>
-      <div>
-        <strong>First Name:</strong> {firstName}
-      </div>
-      <div>
-        <strong>Last Name:</strong> {lastName}
-      </div>
-      <div>
-        <strong>Username:</strong> {user.username}
-      </div>
-      <div>
-        <strong>Email:</strong> {user.email}
-      </div>
-      <div>
-        <strong>Phone:</strong> {user.phone}
+      <h2 className={styles.userDetailPage__title}>User Details</h2>
+      <div className={styles.userDetailPage__info}>
+        <p><strong>First Name:</strong> {firstName}</p>
+        <p><strong>Last Name:</strong> {lastName}</p>
+        <p><strong>Username:</strong> {user.username}</p>
+        <p><strong>Email:</strong> {user.email}</p>
+        <p><strong>Phone:</strong> {user.phone}</p>
       </div>
       <button
-        style={{ marginTop: 24, padding: "8px 16px", cursor: "pointer" }}
+        className={styles.userDetailPage__backBtn}
+        type="button"
         onClick={() => navigate("/users")}
       >
         Back

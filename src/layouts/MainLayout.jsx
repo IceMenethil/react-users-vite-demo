@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
 
+import styles from "./MainLayout.module.scss";
+
 const MainLayout = ({ children }) => {
   return (
-    <div style={{ maxWidth: 720, margin: "40px auto", padding: 24 }}>
-      <nav style={{ marginBottom: 32 }}>
-        <Link to="/about" style={{ marginRight: 16 }}>
+    <>
+      <nav className={styles.nav}>
+        <Link to="/about" className={styles.nav__link}>
           About
         </Link>
-        <Link to="/users">Users</Link>
+        <Link to="/users" className={styles.nav__link}>Users</Link>
       </nav>
-      <main>{children}</main>
-    </div>
+      <div className={styles.layout}>
+        <main>{children}</main>
+      </div>
+    </>
   );
 };
 

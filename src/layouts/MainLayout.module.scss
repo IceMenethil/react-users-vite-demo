@@ -1,0 +1,27 @@
+@use ".././/styles/mixins/media" as media;
+
+.layout {
+  padding: 0 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+
+  @include media.media(md) {
+    padding-bottom: 20px;
+  }
+}
+
+.nav {
+  margin-bottom: 32px;
+  padding: 16px 10px;
+  border-bottom: 1px solid #000;
+
+  &__link {
+    margin-right: 16px;
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
