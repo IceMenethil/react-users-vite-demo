@@ -1,4 +1,4 @@
-# GeozillaTest
+# Test
 
 A minimal React + Vite project demonstrating user listing and detail pages, using Zustand for state management, Axios for API calls, and React Router for routing.
 
