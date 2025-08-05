@@ -47,7 +47,9 @@ src/
 ---
 
 🗂️ Key Files & Directories
+
 src/App.jsx — Root component, initializes layout and routing.
+
 src/main.jsx — App entry point, renders <App />.
 
 📦 API
