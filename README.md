@@ -53,43 +53,65 @@ src/App.jsx — Root component, initializes layout and routing.
 src/main.jsx — App entry point, renders <App />.
 
 📦 API
+
 src/api/ — Axios-based API logic.
+
 baseApi.js — Axios instance with base config.
+
 UsersApi.js — Methods to fetch user data.
 
 🧩 Components
+
 src/components/UserCard.jsx — Reusable UI card component for user preview.
+
 UserCard.module.scss — SCSS module styles scoped to the UserCard component.
 
 ⚙️ Config
+
 src/config/endpoints.js — Centralized API endpoint definitions.
 
 🔧 Features
+
 src/features/users/ — Feature-based folder for user-related logic.
+
 UsersPage.jsx — Page for listing and filtering users.
+
 UserDetailPage.jsx — Page for viewing individual user details.
+
 *.module.scss — Scoped styles for each page.
 
 🧱 Layouts
+
 src/layouts/MainLayout.jsx — Shared app layout with navigation.
+
 MainLayout.module.scss — Styles for layout elements.
 
 📄 Pages
+
 src/pages/AboutPage.jsx — Static "About" page.
+
 src/pages/NotFoundPage.jsx — 404 fallback page.
 
 🛣 Routing
+
 src/routes/AppRoutes.jsx — React Router DOM route definitions.
 
 🗂 State Management
+
 src/stores/useUsersStore.js — Zustand store for managing user state.
 
 🎨 Styles
+
 src/styles/index.scss — Global SCSS entry point (resets, variables, mixins).
+
 base/_reset.scss — Basic CSS reset using SCSS.
+
 mixins/_media.scss — Responsive mixins using breakpoints.
+
 variables/ — Project-wide variables:
+
 _colors.scss — Color system.
+
 _breakpoints.scss — Responsive breakpoints.
 
 ---
