@@ -1,8 +1,9 @@
+@use 'sass:map';
 @use "../variables/breakpoints" as *;
 
 @mixin media($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    $width: map-get($breakpoints, $breakpoint);
+  @if map.has-key($breakpoints, $breakpoint) {
+    $width: map.get($breakpoints, $breakpoint);
     @media (max-width: $width) {
       @content;
     }
