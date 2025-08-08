@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import useUsersStore from "../../stores/useUsersStore";
-import UserCard from "../../components/UserCard";
+import UserCard from "../../components/UserCard/UserCard";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 
 import styles from "./UsersPage.module.scss";
 
 const UsersPage = () => {
-  const { users, fetchUsers } = useUsersStore();
+  const { users, fetchUsers, loading } = useUsersStore();
   const [filter, setFilter] = useState("");
 
   useEffect(() => {
@@ -16,7 +17,7 @@ const UsersPage = () => {
     user.name.toLowerCase().includes(filter.toLowerCase())
   );
   return (
-    <section style={{ marginBottom: '30px' }}>
+    <section style={{ marginBottom: "30px" }}>
       <h1 className={styles.users__title}>Users</h1>
       <input
         className={styles.users__filter}
@@ -27,11 +28,15 @@ const UsersPage = () => {
         onChange={(e) => setFilter(e.target.value)}
         style={{ marginBottom: 16, padding: 8, width: "100%" }}
       />
-      <ul>
-        {filteredUsers.map((user) => (
-          <UserCard {...user} key={user.id} />
-        ))}
-      </ul>
+      {loading ? (
+        <LoadingSpinner message="Loading users..." />
+      ) : (
+        <ul>
+          {filteredUsers.map((user) => (
+            <UserCard {...user} key={user.id} />
+          ))}
+        </ul>
+      )}
     </section>
   );
 };
