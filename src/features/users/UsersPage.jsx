@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import useUsersStore from "../../stores/useUsersStore";
 import UserCard from "../../components/UserCard/UserCard";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
 import styles from "./UsersPage.module.scss";
 
 const UsersPage = () => {
-  const { users, fetchUsers, loading } = useUsersStore();
+  const { users, fetchUsers, loading, error } = useUsersStore();
   const [filter, setFilter] = useState("");
 
   useEffect(() => {
@@ -28,6 +29,7 @@ const UsersPage = () => {
         onChange={(e) => setFilter(e.target.value)}
         style={{ marginBottom: 16, padding: 8, width: "100%" }}
       />
+      {error && <ErrorMessage message={error} />}
       {loading ? (
         <LoadingSpinner message="Loading users..." />
       ) : (
