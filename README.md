@@ -15,7 +15,6 @@ A modern React application demonstrating user management with API integration, s
 ## Project Structure
 
 ```
-<code>
 src/
 │   App.jsx
 │   main.jsx
@@ -48,7 +47,6 @@ src/
     ├───base/
     ├───mixins/
     └───variables/
-</code>
 ```
 
 ## Getting Started
