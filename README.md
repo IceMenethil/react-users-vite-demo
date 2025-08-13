@@ -1,155 +1,113 @@
 # Test
 
-A minimal React + Vite project demonstrating user listing and detail pages, using Zustand for state management, Axios for API calls, and React Router for routing.
+A modern React application demonstrating user management with API integration, state management, and modular component architecture.
 
----
+## Features
 
-## 🗂️ Project Structure
+- **User Management:** Fetch, cache, and display users from a remote API.
+- **State Management:** Uses [Zustand](https://zustand-demo.pmnd.rs/) for global state.
+- **API Layer:** Abstracted API calls for maintainability and scalability.
+- **Component-Based UI:** Reusable components for user cards, loading spinners, and error messages.
+- **Routing:** Client-side routing with React Router.
+- **Styling:** Modular SCSS with variables and mixins for maintainable styles.
+- **LocalStorage Caching:** Reduces unnecessary API calls by caching users.
+
+## Project Structure
+
+```
 <code>
 src/
 │   App.jsx
 │   main.jsx
-├───api
+│
+├───api/                # API abstraction layer
 │       baseApi.js
 │       UsersApi.js
-├───assets
-├───components
-│       UserCard.jsx
-│       UserCard.module.scss
-├───config
-│       endpoints.js
-├───features
-│   └───users
-│           UserDetailPage.jsx        
-│           UserDetailPage.module.scss
-│           UsersPage.jsx
-│           UsersPage.module.scss    
-├───layouts
-│       MainLayout.jsx
-│       MainLayout.module.scss
-├───pages
-│       AboutPage.jsx
-│       NotFoundPage.jsx
-├───routes
-│       AppRoutes.jsx
-├───stores
-│       useUsersStore.js
-└───styles
-    │   index.scss
-    ├───base
-    │       _reset.scss
-    ├───mixins
-    │       _media.scss
-    └───variables
-            _breakpoints.scss
-            _colors.scss
+│
+├───assets/             # Static assets (images, fonts, etc.)
+│
+├───components/         # Reusable UI components
+│   ├───ErrorMessage/
+│   ├───LoadingSpinner/
+│   └───UserCard/
+│
+├───config/             # App configuration (endpoints, etc.)
+│
+├───features/           # Feature-specific modules
+│   └───users/
+│
+├───layouts/            # Layout components
+│
+├───pages/              # Top-level pages
+│
+├───routes/             # App route definitions
+│
+├───stores/             # Zustand stores for state management
+│
+└───styles/             # Global and modular SCSS
+    ├───base/
+    ├───mixins/
+    └───variables/
 </code>
----
+```
 
-🗂️ Key Files & Directories
-
-src/App.jsx — Root component, initializes layout and routing.
-
-src/main.jsx — App entry point, renders <App />.
-
-📦 API
-
-src/api/ — Axios-based API logic.
-
-baseApi.js — Axios instance with base config.
-
-UsersApi.js — Methods to fetch user data.
-
-🧩 Components
-
-src/components/UserCard.jsx — Reusable UI card component for user preview.
-
-UserCard.module.scss — SCSS module styles scoped to the UserCard component.
-
-⚙️ Config
-
-src/config/endpoints.js — Centralized API endpoint definitions.
-
-🔧 Features
-
-src/features/users/ — Feature-based folder for user-related logic.
-
-UsersPage.jsx — Page for listing and filtering users.
-
-UserDetailPage.jsx — Page for viewing individual user details.
-
-*.module.scss — Scoped styles for each page.
-
-🧱 Layouts
-
-src/layouts/MainLayout.jsx — Shared app layout with navigation.
-
-MainLayout.module.scss — Styles for layout elements.
-
-📄 Pages
-
-src/pages/AboutPage.jsx — Static "About" page.
-
-src/pages/NotFoundPage.jsx — 404 fallback page.
-
-🛣 Routing
-
-src/routes/AppRoutes.jsx — React Router DOM route definitions.
-
-🗂 State Management
-
-src/stores/useUsersStore.js — Zustand store for managing user state.
-
-🎨 Styles
-
-src/styles/index.scss — Global SCSS entry point (resets, variables, mixins).
-
-base/_reset.scss — Basic CSS reset using SCSS.
-
-mixins/_media.scss — Responsive mixins using breakpoints.
-
-variables/ — Project-wide variables:
-
-_colors.scss — Color system.
-
-_breakpoints.scss — Responsive breakpoints.
-
----
-
-## 🎨 SCSS Integration
-
-- SCSS was implemented for better style structure and maintainability.
-- Global styles are placed in `src/styles/`, including:
-  - `variables/` for colors, spacing, breakpoints
-  - `mixins/` for media queries, utility helpers
-  - `base/_reset.scss` for CSS reset
-- Component-level styling uses SCSS Modules (`*.module.scss`) for local scope.
-
----
-
-## Setup Instructions
+## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18+ recommended)
-- [npm](https://www.npmjs.com/) (comes with Node.js)
+- Node.js (v18+ recommended)
+- npm or yarn
 
-### Install Dependencies
+### Installation
 
-```sh
+```bash
+git clone https://github.com/IceMenethil/react-users-vite-demo.git
+cd react-users-vite-demo
 npm install
 ```
 
-API
-By default, the app fetches users from JSONPlaceholder.
-You can override the API base URL by setting the REACT_APP_API_BASE_URL environment variable in a .env file at the project root.
+### Running the App
 
-Features
-User list with filter
-User detail page
-Zustand for state management
-Axios for HTTP requests
-React Router v7 for routing
-Minimal global styling
-SCSS for modular styling
-Responsive layout via SCSS mixins
+```bash
+npm run dev
+```
+
+The app will be available at [http://localhost:5173](http://localhost:5173) (or as specified in your Vite config).
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+### Linting & Formatting
+
+```bash
+npm run lint
+npm run format
+```
+
+## Key Files
+
+- **`src/stores/useUsersStore.js`**  
+  Zustand store for user state, including localStorage caching logic.
+- **`src/api/UsersApi.js`**  
+  Handles all user-related API requests.
+- **`src/components/UserCard/`**  
+  Displays individual user information.
+- **`src/features/users/UsersPage.jsx`**  
+  Main page for listing users.
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Open a pull request
+
+## License
+
+[MIT](LICENSE)
+
+---
