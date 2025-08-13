@@ -11,8 +11,11 @@ const UsersPage = () => {
   const [filter, setFilter] = useState("");
 
   useEffect(() => {
-    fetchUsers();
-  }, [fetchUsers]);
+    if (!users.length) {
+      // Only fetch if users are not already loaded
+      fetchUsers();
+    }
+  }, [fetchUsers, users]);
 
   const filteredUsers = users.filter((user) =>
     user.name.toLowerCase().includes(filter.toLowerCase())
